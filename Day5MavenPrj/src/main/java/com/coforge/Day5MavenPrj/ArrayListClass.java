@@ -1,8 +1,10 @@
 package com.coforge.Day5MavenPrj;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
+import java.util.List;
 
 public class ArrayListClass {
 	
@@ -76,6 +78,14 @@ public class ArrayListClass {
 	    
 	    Collections.sort(aList);
 	    System.out.println(aList);
+	    
+	    Integer[] irr = aList.toArray(new Integer[0]);
+	    System.out.println(irr[2]);
+	    
+	    Integer[] arr = {34, 56, 32, 43, 76, 87};
+	    List<Integer> list = Arrays.asList(arr);
+	    
+	    System.out.println(list);
 	    
 	    
 	}
