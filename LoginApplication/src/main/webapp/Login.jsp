@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Login Form</h1>
-    <form action="loginservlet" method="get">
+    <form action="LoginServlet" method="get">
         <label>UserName:</label>
         <input type="text" name="uname"><br>
         

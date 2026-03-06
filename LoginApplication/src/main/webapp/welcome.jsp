@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <h1>Welcome ${uname}</h1>
+    <h1>Welcome ${user.username}</h1>
 
 </body>
 </html>

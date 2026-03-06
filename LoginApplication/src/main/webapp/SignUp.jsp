@@ -8,12 +8,12 @@
 </head>
 <body>
 
-    <form action="loginservlet" method="get">
+    <form action="SignUpServlet" method="post">
         <label>UserName:</label>
-        <input type="text" name="uname2"><br>
+        <input type="text" name="uname"><br>
         
         <label>Password:</label>
-        <input type="password" name="pwd2"><br>
+        <input type="password" name="pwd"><br>
         
         <label>E-mail:</label>
         <input type="email" name="mail"><br>
