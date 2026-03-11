@@ -75,7 +75,7 @@ public class EmployeeServlet extends HttpServlet {
 		case "delete":
 			Long del_eid=Long.parseLong(request.getParameter("eid"));
 			EmployeeDAO.deleteEmployeeById(del_eid);
-			response.sendRedirect("EmployeeServlet?action=list");
+			response.sendRedirect("employee?action=list");
 			break;
 		default:
 			out.println("no action selected");
