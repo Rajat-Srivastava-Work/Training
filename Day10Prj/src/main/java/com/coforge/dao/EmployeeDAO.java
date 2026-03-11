@@ -74,12 +74,70 @@ public class EmployeeDAO {
 	}
 	
 	public void updateEmployee(Employee emp) {
-	
+		String query="update employees set ename=?,salary=?,email=?,mobile=?,doj=?,dob=? where eid=?";
+		try(Connection conn=DBUtil.getConnection();
+			PreparedStatement ps=conn.prepareStatement(query)){
+			ps.setString(1, emp.getEname());
+			ps.setDouble(2, emp.getSalary());
+			ps.setString(3,emp.getEmail());
+			ps.setString(4, emp.getMobile());
+			ps.setDate(5,java.sql.Date.valueOf(emp.getDoj()));
+			ps.setDate(6, java.sql.Date.valueOf(emp.getDob()));
+			ps.setLong(7, emp.getEid());
+			ps.executeUpdate();
+			System.out.println("Employee updated successfully");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	
 	public Employee getEmployeeById(long eid) {
-		return null;
+		Employee emp=null;
+		String query = "select * from employees where eid=?";
+		try(Connection conn=DBUtil.getConnection();
+			PreparedStatement ps=conn.prepareStatement(query)){
+			ps.setLong(1, eid);
+			
+			ResultSet rs=ps.executeQuery();
+			if(rs.next()) {
+				emp=new Employee();
+				emp.setEid(rs.getLong("eid"));
+				emp.setEname(rs.getString("ename"));
+				emp.setSalary(rs.getDouble("salary"));
+				emp.setEmail(rs.getString("email"));
+				emp.setMobile(rs.getString("mobile"));
+				emp.setDoj(rs.getDate("doj").toLocalDate());
+				emp.setDob(rs.getDate("dob").toLocalDate());
+			}
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return emp;
+	}
+	
+	public static void deleteEmployeeById(long eid) {
+		String query="delete from employees where eid=?";
+		try(Connection conn=DBUtil.getConnection();
+			PreparedStatement ps=conn.prepareStatement(query)) {
+			ps.setLong(1, eid);
+			ps.execute();
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

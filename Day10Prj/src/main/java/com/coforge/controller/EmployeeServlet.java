@@ -2,11 +2,14 @@ package com.coforge.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
 
 import com.coforge.dao.EmployeeDAO;
 import com.coforge.models.Employee;
+import com.coforge.util.DBUtil;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -61,6 +64,18 @@ public class EmployeeServlet extends HttpServlet {
 			request.setAttribute("employee", emp);
 			rd=request.getRequestDispatcher(("employee-form.jsp"));
 			rd.forward(request, response);
+			break;
+		case "find":
+			long eid1=Long.parseLong(request.getParameter("eid"));
+			Employee emp1=dao.getEmployeeById(eid1);
+			request.setAttribute("employee", emp1);
+			rd=request.getRequestDispatcher("employee-form.jsp");
+			rd.forward(request, response);
+			break;
+		case "delete":
+			Long del_eid=Long.parseLong(request.getParameter("eid"));
+			EmployeeDAO.deleteEmployeeById(del_eid);
+			response.sendRedirect("EmployeeServlet?action=list");
 			break;
 		default:
 			out.println("no action selected");

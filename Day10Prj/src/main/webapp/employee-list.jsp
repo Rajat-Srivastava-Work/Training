@@ -48,8 +48,9 @@
 								<td><%= emp.getDoj() %></td>
 								<td><%= emp.getDob() %></td>
 								<td class="d-flex gap-2">
-									<a href="employee?action=edit&eid<%=emp.getEid() %>" class="btn btn-success">Edit</a>
-									<a href="employee?action=delete&eid<%=emp.getEid() %>" class="btn btn-danger" onclick="return confirm(do you want to delete the employee)">Delete</a>
+									<a href="employee?action=edit&eid=<%=emp.getEid() %>" class="btn btn-success">Edit</a>
+									<a href="employee?action=delete&eid=<%=emp.getEid() %>" class="btn btn-danger" onclick="return confirm(do you want to delete the employee)">Delete</a>
+									<a href="employee?action=find&eid=<%=emp.getEid() %>" class="btn btn-info">Find</a>
 								</td>
 							</tr>
 						 <% }} else{%>
