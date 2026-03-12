@@ -56,14 +56,20 @@ public class StudentServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		PrintWriter out=response.getWriter();
 		out.println("Student Servlet is running..............");
-		
+        System.out.println(driver);
+        System.out.println(uname);
+        System.out.println(url);
+        System.out.println(pwd);
 		try(Connection conn=DriverManager.getConnection(url,uname,pwd)){
-			String query="select * from student";
+			String query="select * from student_table";
 			Statement st=conn.createStatement();
 			ResultSet rs=st.executeQuery(query);
 			while(rs.next()) {
-				out.println("stdId: "+rs.getLong("stdId"));
-				out.println("stdName: "+rs.getString("stdName"));
+				out.println("stdId: "+rs.getLong("stdid"));
+				out.println("stdName: "+rs.getString("stdname"));
+				out.println("Marks: "+rs.getInt("marks"));
+				out.println("mobile: "+rs.getString("mobile_no"));
+				
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

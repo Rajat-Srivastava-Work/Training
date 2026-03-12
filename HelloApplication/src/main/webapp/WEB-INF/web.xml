@@ -23,6 +23,7 @@
   	<servlet-name>demo</servlet-name>
   	<url-pattern>/demo</url-pattern>
   </servlet-mapping>
+  
   <servlet>
   	<servlet-name>stud</servlet-name>
   	<servlet-class>com.coforge.StudentServlet</servlet-class>
@@ -50,8 +51,5 @@
   <context-param>
   	<param-name>UserName</param-name>
   	<param-value>Rajat Srivastava</param-value>
-  </context-param>
-  <context-param>
-  	<param-value></param-value>
   </context-param>
 </web-app>
