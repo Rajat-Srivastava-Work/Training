@@ -20,7 +20,7 @@ import jakarta.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ViewAccountServlet
  */
-@WebServlet("/ViewAccountServlet")
+@WebServlet("/ViewAccountsServlet")
 public class ViewAccountsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private AccountDAO dao=new AccountDAO();
@@ -43,14 +43,20 @@ public class ViewAccountsServlet extends HttpServlet {
 		accList=dao.getAllAccounts(conn);
 		
 		PrintWriter out=response.getWriter();
-		out.println("<html><body><table border=3px>");
-		out.println("<thead><tr><th>Account Number></th><th>Account Holder Name</th><th>Account Type</th><th>Balance</th>");
+		out.println("<html><body>");
+		out.println("<form action='SearchAccountsServlet'>");
+		out.println("<input type='text' name='query' placeholder='Please enter Account Number, Account Type, Account Holder Name to search' />");
+		out.println("<button>Search</button>");
+		out.println("</form>");
+		out.println("<table border=3px>");
+		out.println("<thead><tr><th>Account Number</th><th>Account Holder Name</th><th>Account Type</th><th>Balance</th><th> Actions</th> </tr></thead>");
 		out.println("<tbody><tr>");
 		for(Account acc:accList) {
 			out.println("<td>"+acc.getAccNo()+"</td>");
 			out.println("<td>"+acc.getAccHolderName()+"</td>");
 			out.println("<td>"+acc.getAccType()+"</td>");
-			out.println("<td>"+acc.getBalance()+"</td></tr>");
+			out.println("<td>"+acc.getBalance()+"</td>");
+			out.println("<td><a href='DeleteAccountServlet?accNo="+acc.getAccNo()+"'>Delete</a></td> </tr>");
 		}
 		out.println("</tbody></table></body></html>");
 	}

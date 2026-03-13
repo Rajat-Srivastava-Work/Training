@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="customer1" class="com.coforge.Beans.Customer">
+    	<constructor-arg name="cid" value="101"></constructor-arg>
+    	<constructor-arg name="cname" value="Rajat"></constructor-arg>
+    	<constructor-arg name="address" ref="addr1"></constructor-arg>
+    	<constructor-arg name="mobile" value="7878787878"></constructor-arg>
+    	<constructor-arg name="email" value="rajat@example.com"></constructor-arg>
+    </bean>
+    <bean id="customer2" class="com.coforge.Beans.Customer">
+    	<constructor-arg name="cid" value="102"></constructor-arg>
+    	<constructor-arg name="cname" value="Vaibhav"></constructor-arg>
+    	<constructor-arg name="address" ref="addr2"></constructor-arg>
+    	<constructor-arg name="mobile" value="87878787"></constructor-arg>
+    	<constructor-arg name="email" value="vaibhav@example.com"></constructor-arg>
+    </bean>
+    <bean id="customer3" class="com.coforge.Beans.Customer">
+    	<constructor-arg name="cid" value="103"></constructor-arg>
+    	<constructor-arg name="cname" value="Yash"></constructor-arg>
+    	<constructor-arg name="address" ref="addr3"></constructor-arg>
+    	<constructor-arg name="mobile" value="8989898989"></constructor-arg>
+    	<constructor-arg name="email" value="yash@example.com"></constructor-arg>
+    </bean>
+    <bean id="customer4" class="com.coforge.Beans.Customer">
+    	<constructor-arg name="cid" value="104"></constructor-arg>
+    	<constructor-arg name="cname" value="Deepansh"></constructor-arg>
+    	<constructor-arg name="address" ref="addr4"></constructor-arg>
+    	<constructor-arg name="mobile" value="9292929292"></constructor-arg>
+    	<constructor-arg name="email" value="deepansh@example.com"></constructor-arg>
+    </bean>
+    <bean id="addr1" class="com.coforge.Beans.Address">
+    	<constructor-arg name="state" value="Telangana"></constructor-arg>
+    	<constructor-arg name="city" value="Hyderabad"></constructor-arg>
+    	<constructor-arg name="pincode" value="500032"></constructor-arg>
+    </bean>
+    <bean id="addr2" class="com.coforge.Beans.Address">
+    	<constructor-arg name="state" value="Telangana"></constructor-arg>
+    	<constructor-arg name="city" value="Hyderabad"></constructor-arg>
+    	<constructor-arg name="pincode" value="500032"></constructor-arg>
+    </bean>
+    <bean id="addr3" class="com.coforge.Beans.Address">
+    	<constructor-arg name="state" value="Telangana"></constructor-arg>
+    	<constructor-arg name="city" value="Hyderabad"></constructor-arg>
+    	<constructor-arg name="pincode" value="500032"></constructor-arg>
+    </bean>
+    <bean id="addr4" class="com.coforge.Beans.Address">
+    	<constructor-arg name="state" value="Telangana"></constructor-arg>
+    	<constructor-arg name="city" value="Hyderabad"></constructor-arg>
+    	<constructor-arg name="pincode" value="500032"></constructor-arg>
+    </bean>
+
+</beans>

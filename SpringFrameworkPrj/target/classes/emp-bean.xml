@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="emp" class="com.coforge.Beans.Employee" autowire="byName">
+    	<property name="eid" value="${Employee.eid}"></property>
+    	<property name="ename" value="${Employee.ename}"></property>
+    </bean>
+    
+    <bean id="dept" class="com.coforge.Beans.Department" autowire="byType">
+    	<property name="deptId" value="${Department.deptId}"></property>
+    	<property name="deptName" value="{Department.deptName}"></property>
+    	<property name="location" value="${Department.location}"></property>
+    </bean> 
+
+</beans>

@@ -1,0 +1,36 @@
+package com.coforge.Beans;
+
+public class HelloBean {
+	private String name;
+	
+	public void sayHello() {
+		System.out.println("Hello");
+	}
+	
+	@Override
+	public String toString() {
+		return "HelloBean [name=" + name + "]";
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public HelloBean(String name) {
+		super();
+		this.name = name;
+	}
+
+	public HelloBean() {
+		super();
+	}
+
+	public void printName(String name) {
+		System.out.println(this.name);
+	}
+
+}

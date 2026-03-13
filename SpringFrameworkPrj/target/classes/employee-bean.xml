@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="emp" class="com.coforge.Beans.Employee" scope="prototype">
+    	<constructor-arg name="eid" value="123"></constructor-arg>
+    	<constructor-arg name="ename" value="Rajat"></constructor-arg>
+    	<constructor-arg name="dept" ref="dept"></constructor-arg>
+    </bean>
+    <bean id="emp1" class="com.coforge.Beans.Employee">
+    	<constructor-arg name="eid" value="124"></constructor-arg>
+    	<constructor-arg name="ename" value="Mayank"></constructor-arg>
+    	<constructor-arg name="dept" ref="dept"></constructor-arg>
+    </bean>
+    <bean id="dept" class="com.coforge.Beans.Department">
+    	<constructor-arg name="deptId" value="1001"></constructor-arg>
+    	<constructor-arg name="deptName" value="Software"></constructor-arg>
+    	<constructor-arg name="location" value="HYD"></constructor-arg>
+    </bean>
+    <bean id="dept1" class="com.coforge.Beans.Department">
+    	<constructor-arg name="deptId" value="1002"></constructor-arg>
+    	<constructor-arg name="deptName" value="Accounts"></constructor-arg>
+    	<constructor-arg name="location" value="BLR"></constructor-arg>
+    </bean>
+    
+
+</beans>
