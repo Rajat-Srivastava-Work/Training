@@ -61,8 +61,6 @@ public class SearchAccountsServlet extends HttpServlet {
 					out.println("<th> Account Type</th> ");
 					out.println("<th> Account Holder Name</th> ");
 					out.println("<th> Balance</th> ");
-					out.println("<th colspan='3'> Actions</th> ");
-					out.println("<th colspan='2'> Transaction Actions</th> ");
 				out.println("</tr>");
 			out.println("</thead>");
 			out.println("<tbody>");		
@@ -72,11 +70,6 @@ public class SearchAccountsServlet extends HttpServlet {
 						out.println("<td> "+a.getAccType()+"</td> ");
 						out.println("<td> "+a.getAccHolderName()+"</td> ");
 						out.println("<td> "+a.getBalance()+"</td> ");
-						out.println("<td><a href='EditAccountServlet?accNo="+a.getAccNo()+"'>Edit</a></td> ");
-						out.println("<td><a href='ViewAccountServlet?accNo="+a.getAccNo()+"'>View</a></td> ");
-						out.println("<td><a href='DeleteAccountServlet?accNo="+a.getAccNo()+"'>Delete</a></td> ");
-						out.println("<td><a href='DepositServlet?accNo="+a.getAccNo()+"'>Deposit</a></td> ");
-						out.println("<td><a href='WithdrawServlet?accNo="+a.getAccNo()+"'>Withdraw</a></td> ");
 					out.println("</tr>");
 				}
 			out.println("</tbody>");		

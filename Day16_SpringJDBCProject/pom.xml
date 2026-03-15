@@ -4,10 +4,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.coforge</groupId>
-  <artifactId>SpringPrjWithAnnotations</artifactId>
+  <artifactId>Day16_SpringJDBCProject</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <name>SpringPrjWithAnnotations</name>
+  <name>Day16_SpringJDBCProject</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -25,7 +25,9 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+
     </dependencies>
+   
   </dependencyManagement>
 
   <dependencies>
@@ -40,11 +42,39 @@
       <artifactId>junit-jupiter-params</artifactId>
       <scope>test</scope>
     </dependency>
-    <!-- Source: https://mvnrepository.com/artifact/org.springframework/spring-core -->
+     <!-- Source: https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.42</version>
+    <scope>compile</scope>
+</dependency>
+<!-- Source: https://mvnrepository.com/artifact/org.springframework/spring-core -->
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-core</artifactId>
     <version>6.2.16</version>
+    <scope>compile</scope>
+</dependency>
+<!-- Source: https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
+    <dependency>
+        <groupId>com.mysql</groupId>
+        <artifactId>mysql-connector-j</artifactId>
+        <version>8.2.0</version>
+        <scope>compile</scope>
+    </dependency>
+    <!-- Source: https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-jdbc</artifactId>
+    <version>6.2.16</version>
+    <scope>compile</scope>
+</dependency>
+<!-- Source: https://mvnrepository.com/artifact/jakarta.annotation/jakarta.annotation-api -->
+<dependency>
+    <groupId>jakarta.annotation</groupId>
+    <artifactId>jakarta.annotation-api</artifactId>
+    <version>3.0.0</version>
     <scope>compile</scope>
 </dependency>
 <!-- Source: https://mvnrepository.com/artifact/org.springframework/spring-context -->
@@ -54,14 +84,6 @@
     <version>6.2.16</version>
     <scope>compile</scope>
 </dependency>
-<!-- Source: https://mvnrepository.com/artifact/org.projectlombok/lombok -->
-	<dependency>
-	    <groupId>org.projectlombok</groupId>
-	    <artifactId>lombok</artifactId>
-	    <version>1.18.42</version>
-	    <scope>compile</scope>
-	</dependency>
-    
   </dependencies>
 
   <build>
