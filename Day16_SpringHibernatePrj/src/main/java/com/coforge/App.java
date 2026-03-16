@@ -82,6 +82,7 @@ public class App {
     	
     	OrderDao ordDao=new OrderDao();
     	ordDao.getAllOrders().forEach(ord->System.out.println(ord));
+    	sc.close();
     	
     	
     	//create menu driven program
