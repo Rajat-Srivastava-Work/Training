@@ -25,7 +25,7 @@ public class MenuDrivenCRUD {
 			
 			System.out.println("1- Create Account");
 			System.out.println("2- Read Account Details");
-			System.out.println("3-Update Account Details");
+			System.out.println("3- Update Account Details");
 			System.out.println("4- Delete Account Details");
 			System.out.println("5- Exit");
 			System.out.println("Enter your choice: ");
@@ -80,7 +80,7 @@ public class MenuDrivenCRUD {
 	}
 	public static void updateAccount(Scanner sc) {
 		
-		System.out.println("Enter account number to uodate");
+		System.out.println("Enter account number to update");
 		int num = sc.nextInt();
 		boolean exist = false;
 		for(Bank bank: bankSet) {
