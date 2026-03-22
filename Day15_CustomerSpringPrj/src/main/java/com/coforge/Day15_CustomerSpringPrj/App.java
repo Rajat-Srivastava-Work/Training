@@ -1,6 +1,7 @@
 package com.coforge.Day15_CustomerSpringPrj;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.coforge.Beans.Customer;
@@ -24,5 +25,7 @@ public class App {
         
         Customer cust4=(Customer) context.getBean("customer4");
         System.out.println(cust4);
+        
+        ((AbstractApplicationContext) context).close();
     }
 }
